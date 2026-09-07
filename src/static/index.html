@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberFoodie Agent</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="control-panel">
+      <div class="brand">
+        <span>CyberFoodie Agent</span>
+        <strong>AI 校园干饭辩论赛</strong>
+      </div>
+      <form id="food-form" class="form">
+        <label>
+          口味偏好
+          <select name="taste">
+            <option value="辣">辣</option>
+            <option value="清淡">清淡</option>
+            <option value="酸甜">酸甜</option>
+            <option value="咸香">咸香</option>
+            <option value="高蛋白">高蛋白</option>
+          </select>
+        </label>
+        <label>
+          预算
+          <input name="budget" type="number" min="8" max="60" value="25">
+        </label>
+        <label>
+          天气
+          <select name="weather">
+            <option value="晴">晴</option>
+            <option value="阴">阴</option>
+            <option value="雨">雨</option>
+            <option value="热">热</option>
+            <option value="冷">冷</option>
+          </select>
+        </label>
+        <label>
+          忌口
+          <input name="avoid" value="无" placeholder="如：牛肉、辣、香菜">
+        </label>
+        <label>
+          就餐场景
+          <select name="scene">
+            <option value="普通午餐">普通午餐</option>
+            <option value="晚自习前">晚自习前</option>
+            <option value="运动后">运动后</option>
+            <option value="赶课间隙">赶课间隙</option>
+          </select>
+        </label>
+        <label>
+          当前心情
+          <input name="mood" value="想吃得满足">
+        </label>
+
+        <div class="agent-config">
+          <h2>自定义 Agent</h2>
+          <p>样例：川湘火辣派 / 粤式清养派 / 西北碳水派 / 江浙甜鲜派 / 日式轻食派 / 韩式拌饭派</p>
+        </div>
+        <label>
+          Agent A 名称
+          <input name="agentAName" value="川湘火辣派">
+        </label>
+        <label>
+          Agent A 性格
+          <textarea name="agentAStyle">偏川菜湘菜，直接热烈，强调辣、香、下饭、解馋和满足感</textarea>
+        </label>
+        <label>
+          Agent B 名称
+          <input name="agentBName" value="粤式清养派">
+        </label>
+        <label>
+          Agent B 性格
+          <textarea name="agentBStyle">偏粤菜清淡，冷静细致，强调汤水、营养均衡、高蛋白和低负担</textarea>
+        </label>
+        <button id="start-btn" type="submit">开赛</button>
+      </form>
+    </section>
+
+    <section class="arena">
+      <header class="arena-header">
+        <div>
+          <span class="eyebrow">实时发言</span>
+          <h1>拯救选择困难症</h1>
+        </div>
+        <div id="status" class="status">等待开赛</div>
+      </header>
+
+      <div id="agents" class="agents">
+        <article class="agent agent-a">
+          <span class="avatar">A</span>
+          <div>
+            <h2>川湘火辣派</h2>
+            <p>主推菜等待开赛分配</p>
+          </div>
+        </article>
+        <article class="agent agent-b">
+          <span class="avatar">B</span>
+          <div>
+            <h2>粤式清养派</h2>
+            <p>主推菜等待开赛分配</p>
+          </div>
+        </article>
+      </div>
+
+      <div id="timeline" class="timeline empty">
+        <p>输入偏好后，两位 AI 大厨会围绕预算、天气、口味进行实时辩论。</p>
+      </div>
+
+      <section id="report" class="report hidden"></section>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

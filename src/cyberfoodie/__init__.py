@@ -1,0 +1,1 @@
+"""CyberFoodie Agent application package."""

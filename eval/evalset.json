@@ -1,0 +1,22 @@
+[
+  {
+    "id": "EVAL-001",
+    "input": {"taste": "辣", "budget": 25, "weather": "雨", "avoid": "无", "scene": "普通午餐"},
+    "expected": ["主推菜不重复", "每个Agent三轮坚持同一道菜", "最终推荐来自两个主推菜之一"]
+  },
+  {
+    "id": "EVAL-002",
+    "input": {
+      "taste": "咸香",
+      "budget": 22,
+      "weather": "晴",
+      "avoid": "无",
+      "scene": "晚自习前",
+      "agents": {
+        "agent_a": {"name": "西北碳水派", "style": "偏西北面食，重视碳水、牛肉、饱腹和省钱"},
+        "agent_b": {"name": "江浙甜鲜派", "style": "偏江浙菜，喜欢酸甜、鲜香、清爽和低负担"}
+      }
+    },
+    "expected": ["西北Agent匹配西北标签", "江浙Agent匹配江浙标签"]
+  }
+]
